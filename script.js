@@ -61,7 +61,10 @@ async function loadSliderImages() {
         const res = await fetch(API_URL);
         const images = await res.json();
 
+        console.log("Gambar dari API:", images); // Debug log
+
         const slider = document.getElementById('slider');
+        slider.innerHTML = ''; // Bersihkan dulu
 
         images.forEach((url, index) => {
             const img = document.createElement('img');
