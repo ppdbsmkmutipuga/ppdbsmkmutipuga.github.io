@@ -51,45 +51,15 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('slider');
+  const imgs = slider.querySelectorAll('img');
 
+  let current = 0;
+  setInterval(() => {
+    imgs[current].classList.remove('active');
+    current = (current + 1) % imgs.length;
+    imgs[current].classList.add('active');
+  }, 3000);
+});
 
-
-const API_URL = 'https://script.google.com/macros/s/AKfycbwVZAqIFPME9akEJ9t8DJY5TGSZxnpy0Bg9YLT6fIb_u_mThKoJUitdy8z2FKzHWQQG/exec';
-
-async function loadSliderImages() {
-    try {
-        const res = await fetch(API_URL);
-        const images = await res.json();
-
-        console.log("Gambar dari API:", images); // ✅ Cek data
-
-        const slider = document.getElementById('slider');
-        if (!slider) {
-            console.error("Elemen #slider tidak ditemukan");
-            return;
-        }
-
-        images.forEach((url, index) => {
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = `Slider image ${index + 1}`;
-            if (index === 0) img.classList.add('active');
-            slider.appendChild(img);
-
-            img.onerror = () => console.error("Gagal load:", url); // ✅ Debug gagal load
-        });
-
-        let current = 0;
-        setInterval(() => {
-            const imgs = slider.querySelectorAll('img');
-            imgs[current].classList.remove('active');
-            current = (current + 1) % imgs.length;
-            imgs[current].classList.add('active');
-        }, 3000);
-    } catch (err) {
-        console.error("Gagal memuat gambar slider:", err);
-    }
-}
-
-
-document.addEventListener('DOMContentLoaded', loadSliderImages);
