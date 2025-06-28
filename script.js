@@ -61,16 +61,22 @@ async function loadSliderImages() {
         const res = await fetch(API_URL);
         const images = await res.json();
 
-        console.log("Gambar dari API:", images); // Debug log
+        console.log("Gambar dari API:", images); // ✅ Cek data
 
         const slider = document.getElementById('slider');
-        slider.innerHTML = ''; // Bersihkan dulu
+        if (!slider) {
+            console.error("Elemen #slider tidak ditemukan");
+            return;
+        }
 
         images.forEach((url, index) => {
             const img = document.createElement('img');
             img.src = url;
+            img.alt = `Slider image ${index + 1}`;
             if (index === 0) img.classList.add('active');
             slider.appendChild(img);
+
+            img.onerror = () => console.error("Gagal load:", url); // ✅ Debug gagal load
         });
 
         let current = 0;
@@ -84,5 +90,6 @@ async function loadSliderImages() {
         console.error("Gagal memuat gambar slider:", err);
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', loadSliderImages);
