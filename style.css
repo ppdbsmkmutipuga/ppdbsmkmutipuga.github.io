@@ -31,27 +31,18 @@ body {
     max-width: 800px;
 }
 
-.image-slider {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-  margin-top: 20px;
+.hero {
+    background: linear-gradient(to right, #673ab7, #512da8);
+    color: white;
+    padding: 4rem 2rem;
+    border-bottom-left-radius: 60px;
+    text-align: center;
 }
 
-.image-slider img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.hero h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
 }
-
-.image-slider img.active {
-  opacity: 1;
-}
-
 
 
 .highlight-badge {
