@@ -1,3 +1,15 @@
+const navbarCollapse = document.getElementById('navMenu');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        bsCollapse.hide();
+    });
+});
+
+
 // Scroll to Top Button
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 window.addEventListener("scroll", () => {
@@ -6,6 +18,7 @@ window.addEventListener("scroll", () => {
 scrollTopBtn?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
 
 // Smooth Scroll for Navbar Links
 document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
@@ -51,3 +64,5 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
         }
     });
 });
+
+
