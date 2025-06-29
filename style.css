@@ -1,6 +1,37 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: #f5f6fa;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card-custom,
+.profile-pic-wrapper,
+.footer,
+.hero {
+    border-radius: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CSS Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Responsive utility */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
 }
 
 .navbar-brand img {
@@ -202,6 +233,47 @@ ul {
     /* warna kuning tua (Tailwind yellow-400) */
 }
 
+.text-gradient {
+    background: linear-gradient(to right, #8338ec, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .teks-bimbingan {
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .faq-heading {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .profile-pic-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .text-purple,
+    .accordion-button,
+    .accordion-body {
+        text-align: center;
+    }
+}
 
 @media (max-width: 576px) {
     #guru-kejuruan h3 {
@@ -211,10 +283,4 @@ ul {
     #guru-kejuruan p {
         font-size: 0.9rem;
     }
-}
-
-.text-gradient {
-    background: linear-gradient(to right, #8338ec, #ff006e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
