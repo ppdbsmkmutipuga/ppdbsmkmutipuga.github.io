@@ -113,3 +113,108 @@ ul {
     opacity: 1;
     transform: translateY(0);
 }
+
+.teks-bimbingan {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ff0066, #6600ff);
+    padding: 20px 30px;
+    border-radius: 20px;
+    text-shadow: 2px 2px 0 red;
+}
+
+
+.faq-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #7e22ce;
+    /* Ungu mencolok */
+    text-shadow: 1px 1px 0 red;
+}
+
+.accordion-button {
+    background-color: transparent;
+    color: #6b21a8;
+    /* Ungu gelap */
+    font-weight: bold;
+    border-bottom: 1px solid #e5e5e5;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f3f4f6;
+    /* abu muda saat aktif */
+    color: #9333ea;
+    box-shadow: inset 0 -1px 0 #e5e5e5;
+}
+
+.accordion-body {
+    color: #333;
+    background-color: #fff;
+    padding: 1rem 1.25rem;
+}
+
+/* Foto Bulat Elegan */
+.profile-pic-wrapper {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #9333ea, #f43f5e);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* Heading Gradien */
+.text-purple {
+    color: #9333ea;
+}
+
+/* Ikon Sosial Media */
+.social-icons a {
+    font-size: 1.25rem;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9333ea;
+}
+
+.link-primary:hover {
+    text-decoration: underline;
+}
+
+.border-warning {
+    border-color: #facc15 !important;
+    /* warna kuning tua (Tailwind yellow-400) */
+}
+
+
+@media (max-width: 576px) {
+    #guru-kejuruan h3 {
+        font-size: 1.3rem;
+    }
+
+    #guru-kejuruan p {
+        font-size: 0.9rem;
+    }
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #8338ec, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
