@@ -51,15 +51,3 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
         }
     });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.getElementById('slider');
-  const imgs = slider.querySelectorAll('img');
-
-  let current = 0;
-  setInterval(() => {
-    imgs[current].classList.remove('active');
-    current = (current + 1) % imgs.length;
-    imgs[current].classList.add('active');
-  }, 3000);
-});
-
