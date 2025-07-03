@@ -69,7 +69,9 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 //Count Down
   // Inline script untuk countdown
         window.addEventListener("load", function () {
-            const targetDate = new Date("2025-07-12T05:00:00Z").getTime(); // UTC+7 = 12.00 WIB
+           const targetDate = new Date(2025, 6, 12, 12, 0, 0).getTime();
+// Note: Bulan Juli = 6 karena index bulan dimulai dari 0 (Jan=0)
+
 
             function updateCountdown() {
                 const now = new Date().getTime();
