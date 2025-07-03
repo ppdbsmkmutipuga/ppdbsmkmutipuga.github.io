@@ -284,3 +284,44 @@ ul {
         font-size: 0.9rem;
     }
 }
+
+
+
+/* Tombol PPDB yang mencolok dan interaktif */
+.btn-ppdb {
+    background: linear-gradient(135deg, #ffc107, #ff5722);
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    animation: pulsePop 2s infinite, floatUp 6s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-ppdb:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 87, 34, 0.6);
+}
+
+/* Efek pulse glowing */
+@keyframes pulsePop {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 193, 7, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
+}
+
+/* Efek mengambang pelan */
+@keyframes floatUp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
