@@ -75,6 +75,9 @@ img {
     font-size: 2.2rem;
 }
 
+.hero {
+    transition: background 0.5s ease-in-out;
+}
 
 .highlight-badge {
     background-color: #ffc107;
