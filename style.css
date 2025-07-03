@@ -46,10 +46,10 @@ img {
 
 .prestasi-title {
     text-shadow:
-        -0.75px -0.75px 0 white,
-        0.75px -0.75px 0 white,
-        -0.75px 0.75px 0 white,
-        0.75px 0.75px 0 white;
+        -0.50px -0.50px 0 rgb(251, 255, 0),
+        0.50px -0.50px 0 rgb(251, 255, 0),
+        -0.50px 0.50px 0 rgb(251, 255, 0),
+        0.50px 0.50px 0 rgb(251, 255, 0);
 }
 
 
