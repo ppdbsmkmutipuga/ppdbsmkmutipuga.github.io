@@ -327,3 +327,40 @@ ul {
     }
 }
 
+
+/* Tombol Hijau Menarik */
+.btn-daftar {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white !important;
+    font-size: 1.1rem;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: zoomInOut 2s ease-in-out infinite;
+}
+
+/* Hover efek tetap */
+.btn-daftar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+}
+
+/* Zoom animasi */
+@keyframes zoomInOut {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* Animasi panah ➜ */
+.arrow-icon {
+    display: inline-block;
+    animation: slideArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes slideArrow {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+
+
