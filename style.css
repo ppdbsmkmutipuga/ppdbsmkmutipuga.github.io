@@ -447,3 +447,19 @@ ul {
     /* agar lebih terbaca di background gelap */
     display: inline-block;
 }
+
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.btn-zoom {
+    animation: zoomInOut 1.5s infinite ease-in-out;
+}
