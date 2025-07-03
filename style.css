@@ -332,35 +332,63 @@ ul {
 .btn-daftar {
     background: linear-gradient(135deg, #22c55e, #16a34a);
     color: white !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    animation: zoomInOut 2s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-daftar:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+/* Tombol WA - Biru Muda */
+.btn-wa {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    /* tailwind sky-400 to blue-500 */
+    color: white !important;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: zoomInOut 2s ease-in-out infinite;
 }
 
-/* Hover efek tetap */
-.btn-daftar:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+.btn-wa:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
 }
 
-/* Zoom animasi */
-@keyframes zoomInOut {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-}
-
-/* Animasi panah ➜ */
+/* Panah ➜ animasi */
 .arrow-icon {
     display: inline-block;
     animation: slideArrow 1.2s ease-in-out infinite;
 }
 
 @keyframes slideArrow {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
+/* Zoom animasi tombol daftar */
+@keyframes zoomInOut {
 
+    0%,
+    100% {
+        transform: scale(1);
+    }
 
+    50% {
+        transform: scale(1.08);
+    }
+}
