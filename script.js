@@ -1,12 +1,10 @@
-// DOM Elements
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-const sections = document.querySelectorAll("section[id]");
-
 window.addEventListener('DOMContentLoaded', () => {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const sections = document.querySelectorAll("section[id]");
     const navbarCollapse = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll(".nav-link");
 
-    // Close navbar (collapse) on link click (mobile)
+    // Auto-close navbar on link click (mobile)
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
@@ -16,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll to top button
+    // Scroll to top button behavior
     if (scrollTopBtn) {
         window.addEventListener("scroll", () => {
             scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -27,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scroll on navbar link click
+    // Smooth scroll for nav-link
     document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -41,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Highlight active nav link on scroll
+    // Active nav-link on scroll
     window.addEventListener("scroll", () => {
         let current = "";
         sections.forEach(section => {
@@ -59,30 +57,25 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optional: Close navbar collapse on link click (mobile)
-    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            const navCollapse = document.querySelector('.navbar-collapse');
-            if (navCollapse && navCollapse.classList.contains('show')) {
-                new bootstrap.Collapse(navCollapse).toggle();
-            }
-        });
-    });
-});
-
-// Countdown
-window.addEventListener("load", function () {
-    const targetDate = new Date(2025, 6, 12, 12, 0, 0).getTime(); // 12 Juli 2025, pukul 12:00 WIB
+    // Countdown Timer
+    const targetDate = new Date(2025, 6, 12, 12, 0, 0).getTime(); // 12 Juli 2025
 
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
+        const cdDay = document.getElementById("cd-day");
+        const cdHour = document.getElementById("cd-hour");
+        const cdMinute = document.getElementById("cd-minute");
+        const cdSecond = document.getElementById("cd-second");
+
+        if (!cdDay || !cdHour || !cdMinute || !cdSecond) return;
+
         if (distance <= 0) {
-            document.getElementById("cd-day").textContent = "00";
-            document.getElementById("cd-hour").textContent = "00";
-            document.getElementById("cd-minute").textContent = "00";
-            document.getElementById("cd-second").textContent = "00";
+            cdDay.textContent = "00";
+            cdHour.textContent = "00";
+            cdMinute.textContent = "00";
+            cdSecond.textContent = "00";
             return;
         }
 
@@ -91,10 +84,10 @@ window.addEventListener("load", function () {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("cd-day").textContent = String(days).padStart(2, "0");
-        document.getElementById("cd-hour").textContent = String(hours).padStart(2, "0");
-        document.getElementById("cd-minute").textContent = String(minutes).padStart(2, "0");
-        document.getElementById("cd-second").textContent = String(seconds).padStart(2, "0");
+        cdDay.textContent = String(days).padStart(2, "0");
+        cdHour.textContent = String(hours).padStart(2, "0");
+        cdMinute.textContent = String(minutes).padStart(2, "0");
+        cdSecond.textContent = String(seconds).padStart(2, "0");
     }
 
     updateCountdown();
