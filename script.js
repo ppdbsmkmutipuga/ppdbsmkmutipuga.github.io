@@ -67,8 +67,7 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 
 
 
-// Optional: Close navbar collapse on link click (mobile)
-// Tanggal target hitung mundur
+// Tanggal target: 12 Juli 2025 pukul 12:00 WIB (UTC+7)
   const targetDate = new Date("2025-07-12T12:00:00+07:00").getTime();
 
   const daysSpan = document.getElementById("days");
@@ -77,10 +76,11 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
   const secondsSpan = document.getElementById("seconds");
 
   function updateCountdown() {
-    const now = new Date().getTime();
+    const now = new Date().getTime(); // waktu sekarang dari device pengguna
     const distance = targetDate - now;
 
     if (distance < 0) {
+      // Jika sudah lewat dari tanggal target
       daysSpan.innerHTML = "00";
       hoursSpan.innerHTML = "00";
       minutesSpan.innerHTML = "00";
@@ -99,5 +99,6 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     secondsSpan.innerHTML = String(seconds).padStart(2, "0");
   }
 
-  updateCountdown(); // Panggil pertama kali
+  updateCountdown(); // Panggilan pertama
   setInterval(updateCountdown, 1000); // Update setiap detik
+
