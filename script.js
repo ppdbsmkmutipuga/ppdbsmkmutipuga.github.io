@@ -68,7 +68,8 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 
 //Count Down
    document.addEventListener("DOMContentLoaded", function () {
-    const targetDate = new Date("2025-07-12T12:00:00+07:00").getTime(); // WIB
+    // 12 Juli 2025 pukul 12.00 WIB = 05.00 UTC
+    const targetDate = new Date("2025-07-12T05:00:00Z").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
