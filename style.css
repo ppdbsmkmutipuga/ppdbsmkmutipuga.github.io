@@ -396,3 +396,54 @@ ul {
         transform: scale(1.08);
     }
 }
+
+
+
+
+
+
+.countdown-timer .time-box {
+    background-color: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: white;
+    border: 2px solid #0ea5e9;
+    border-radius: 10px;
+    padding: 6px 12px;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.countdown-timer .time-box:hover {
+    transform: scale(1.05);
+}
+
+.countdown-timer .time-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0ea5e9;
+}
+
+.countdown-timer .time-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 2px;
+}
+
+.countdown-timer small {
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.countdown-info {
+    color: #fefefe;
+    /* Putih cerah */
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    /* agar lebih terbaca di background gelap */
+    display: inline-block;
+}
