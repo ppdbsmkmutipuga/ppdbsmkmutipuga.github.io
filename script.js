@@ -68,22 +68,36 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 
 
 // Optional: Close navbar collapse on link click (mobile)
-function updateCountdown() {
-    const deadline = new Date("2025-07-12T12:00:00+07:00").getTime();
+// Tanggal target hitung mundur
+  const targetDate = new Date("2025-07-12T12:00:00+07:00").getTime();
+
+  const daysSpan = document.getElementById("days");
+  const hoursSpan = document.getElementById("hours");
+  const minutesSpan = document.getElementById("minutes");
+  const secondsSpan = document.getElementById("seconds");
+
+  function updateCountdown() {
     const now = new Date().getTime();
-    const gap = deadline - now;
+    const distance = targetDate - now;
 
-    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
-    const h = Math.floor((gap / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((gap / (1000 * 60)) % 60);
-    const s = Math.floor((gap / 1000) % 60);
+    if (distance < 0) {
+      daysSpan.innerHTML = "00";
+      hoursSpan.innerHTML = "00";
+      minutesSpan.innerHTML = "00";
+      secondsSpan.innerHTML = "00";
+      return;
+    }
 
-    document.getElementById("cd-day").textContent = d >= 0 ? d : '00';
-    document.getElementById("cd-hour").textContent = h >= 0 ? h : '00';
-    document.getElementById("cd-minute").textContent = m >= 0 ? m : '00';
-    document.getElementById("cd-second").textContent = s >= 0 ? s : '00';
-}
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+    daysSpan.innerHTML = String(days).padStart(2, "0");
+    hoursSpan.innerHTML = String(hours).padStart(2, "0");
+    minutesSpan.innerHTML = String(minutes).padStart(2, "0");
+    secondsSpan.innerHTML = String(seconds).padStart(2, "0");
+  }
 
+  updateCountdown(); // Panggil pertama kali
+  setInterval(updateCountdown, 1000); // Update setiap detik
