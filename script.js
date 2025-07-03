@@ -67,23 +67,18 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 
 
 //Count Down
- document.addEventListener("DOMContentLoaded", function () {
-    const targetDate = new Date("2025-07-12T12:00:00+07:00").getTime();
-
-    const daySpan = document.getElementById("cd-day");
-    const hourSpan = document.getElementById("cd-hour");
-    const minuteSpan = document.getElementById("cd-minute");
-    const secondSpan = document.getElementById("cd-second");
+   document.addEventListener("DOMContentLoaded", function () {
+    const targetDate = new Date("2025-07-12T12:00:00+07:00").getTime(); // WIB
 
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = targetDate - now;
 
       if (distance < 0) {
-        daySpan.textContent = "00";
-        hourSpan.textContent = "00";
-        minuteSpan.textContent = "00";
-        secondSpan.textContent = "00";
+        document.getElementById("cd-day").textContent = "00";
+        document.getElementById("cd-hour").textContent = "00";
+        document.getElementById("cd-minute").textContent = "00";
+        document.getElementById("cd-second").textContent = "00";
         return;
       }
 
@@ -92,10 +87,10 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      daySpan.textContent = String(days).padStart(2, '0');
-      hourSpan.textContent = String(hours).padStart(2, '0');
-      minuteSpan.textContent = String(minutes).padStart(2, '0');
-      secondSpan.textContent = String(seconds).padStart(2, '0');
+      document.getElementById("cd-day").textContent = String(days).padStart(2, "0");
+      document.getElementById("cd-hour").textContent = String(hours).padStart(2, "0");
+      document.getElementById("cd-minute").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("cd-second").textContent = String(seconds).padStart(2, "0");
     }
 
     updateCountdown();
