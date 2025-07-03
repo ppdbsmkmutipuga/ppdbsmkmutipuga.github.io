@@ -67,34 +67,34 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 
 
 //Count Down
-   document.addEventListener("DOMContentLoaded", function () {
-    // 12 Juli 2025 pukul 12.00 WIB = 05.00 UTC
-    const targetDate = new Date("2025-07-12T05:00:00Z").getTime();
+  // Inline script untuk countdown
+        window.addEventListener("load", function () {
+            const targetDate = new Date("2025-07-12T05:00:00Z").getTime(); // UTC+7 = 12.00 WIB
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
 
-      if (distance < 0) {
-        document.getElementById("cd-day").textContent = "00";
-        document.getElementById("cd-hour").textContent = "00";
-        document.getElementById("cd-minute").textContent = "00";
-        document.getElementById("cd-second").textContent = "00";
-        return;
-      }
+                if (distance <= 0) {
+                    document.getElementById("cd-day").textContent = "00";
+                    document.getElementById("cd-hour").textContent = "00";
+                    document.getElementById("cd-minute").textContent = "00";
+                    document.getElementById("cd-second").textContent = "00";
+                    return;
+                }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("cd-day").textContent = String(days).padStart(2, "0");
-      document.getElementById("cd-hour").textContent = String(hours).padStart(2, "0");
-      document.getElementById("cd-minute").textContent = String(minutes).padStart(2, "0");
-      document.getElementById("cd-second").textContent = String(seconds).padStart(2, "0");
-    }
+                document.getElementById("cd-day").textContent = String(days).padStart(2, "0");
+                document.getElementById("cd-hour").textContent = String(hours).padStart(2, "0");
+                document.getElementById("cd-minute").textContent = String(minutes).padStart(2, "0");
+                document.getElementById("cd-second").textContent = String(seconds).padStart(2, "0");
+            }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  });
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
 
