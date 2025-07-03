@@ -1,5 +1,10 @@
+// DOM Elements
 const navbarCollapse = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll(".nav-link");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+const sections = document.querySelectorAll("section[id]");
 
+// Nav collapse on link click
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
@@ -9,9 +14,7 @@ navLinks.forEach(link => {
     });
 });
 
-
-// Scroll to Top Button
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+// Scroll to top button
 window.addEventListener("scroll", () => {
     scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
@@ -19,8 +22,7 @@ scrollTopBtn?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-
-// Smooth Scroll for Navbar Links
+// Smooth scroll
 document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
@@ -34,10 +36,7 @@ document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
     });
 });
 
-// Highlight active nav link on scroll
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
-
+// Active link on scroll
 window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
@@ -55,7 +54,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Optional: Close navbar collapse on link click (mobile)
+// Optional: Close navbar collapse on mobile
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     link.addEventListener('click', () => {
         const navCollapse = document.querySelector('.navbar-collapse');
@@ -65,38 +64,33 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     });
 });
 
+// Countdown
+window.addEventListener("load", function () {
+    const targetDate = new Date(2025, 6, 12, 12, 0, 0).getTime();
 
-//Count Down
-  // Inline script untuk countdown
-        window.addEventListener("load", function () {
-           const targetDate = new Date(2025, 6, 12, 12, 0, 0).getTime();
-// Note: Bulan Juli = 6 karena index bulan dimulai dari 0 (Jan=0)
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
+        if (distance <= 0) {
+            document.getElementById("cd-day").textContent = "00";
+            document.getElementById("cd-hour").textContent = "00";
+            document.getElementById("cd-minute").textContent = "00";
+            document.getElementById("cd-second").textContent = "00";
+            return;
+        }
 
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                if (distance <= 0) {
-                    document.getElementById("cd-day").textContent = "00";
-                    document.getElementById("cd-hour").textContent = "00";
-                    document.getElementById("cd-minute").textContent = "00";
-                    document.getElementById("cd-second").textContent = "00";
-                    return;
-                }
+        document.getElementById("cd-day").textContent = String(days).padStart(2, "0");
+        document.getElementById("cd-hour").textContent = String(hours).padStart(2, "0");
+        document.getElementById("cd-minute").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("cd-second").textContent = String(seconds).padStart(2, "0");
+    }
 
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("cd-day").textContent = String(days).padStart(2, "0");
-                document.getElementById("cd-hour").textContent = String(hours).padStart(2, "0");
-                document.getElementById("cd-minute").textContent = String(minutes).padStart(2, "0");
-                document.getElementById("cd-second").textContent = String(seconds).padStart(2, "0");
-            }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        });
-
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+});
