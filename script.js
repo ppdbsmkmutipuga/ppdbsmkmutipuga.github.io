@@ -66,3 +66,24 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 });
 
 
+
+// Optional: Close navbar collapse on link click (mobile)
+function updateCountdown() {
+    const deadline = new Date("2025-07-12T12:00:00+07:00").getTime();
+    const now = new Date().getTime();
+    const gap = deadline - now;
+
+    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const h = Math.floor((gap / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((gap / (1000 * 60)) % 60);
+    const s = Math.floor((gap / 1000) % 60);
+
+    document.getElementById("cd-day").textContent = d >= 0 ? d : '00';
+    document.getElementById("cd-hour").textContent = h >= 0 ? h : '00';
+    document.getElementById("cd-minute").textContent = m >= 0 ? m : '00';
+    document.getElementById("cd-second").textContent = s >= 0 ? s : '00';
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
