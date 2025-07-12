@@ -1,465 +1,259 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #f5f6fa;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+:root {
+    --primary: #4a00e0;
+    --secondary: #8e2de2;
+    --success: #43a047;
+    --bg-gradient: linear-gradient(to right, #4a00e0, #8e2de2);
+    --light: #f8f9fa;
+    --dark: #2d2d2d;
+    --shadow: rgba(0, 0, 0, 0.15);
 }
 
-.card-custom,
-.profile-pic-wrapper,
-.footer,
-.hero {
-    border-radius: 20px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* CSS Reset dasar */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-
-/* Responsive utility */
-.container {
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: 1rem;
-}
-
-.navbar-brand img {
-    max-height: 32px;
-    width: auto;
-}
-
-.list-group-item {
-    background-color: #f9fafc;
-    border: none;
-}
-
-.prestasi-title {
-    text-shadow:
-        -0.50px -0.50px 0 rgb(251, 255, 0),
-        0.50px -0.50px 0 rgb(251, 255, 0),
-        -0.50px 0.50px 0 rgb(251, 255, 0),
-        0.50px 0.50px 0 rgb(251, 255, 0);
-}
-
-
-.prestasi-section {
-    background: linear-gradient(180deg, #8a2be2, #b266ff);
-    color: white;
-}
-
-.sertifikat-img-container {
-    max-width: 800px;
-}
-.hero {
-    background: linear-gradient(to right, #673ab7, #512da8); /* ungu tua */
-    color: white;
-    padding: 4rem 2rem;
-    border-bottom-left-radius: 60px;
-    text-align: center;
-}
-
-
-.hero h1 {
-    font-weight: 700;
-    font-size: 2.2rem;
-}
-
-.hero {
-    transition: background 0.5s ease-in-out;
-}
-
-.highlight-badge {
-    background-color: #ffc107;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    color: #000;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-.section-title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-}
-
-.card-custom {
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    background: #fff;
-}
-
-.footer {
-    background-color: #512da8;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-    border-top-left-radius: 60px;
-}
-
-ul {
-    padding-left: 1.2rem;
-}
-
-#scrollTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 40px;
-    right: 20px;
-    z-index: 99;
-    font-size: 18px;
-    background-color: #512da8;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-#scrollTopBtn:hover {
-    background-color: #311b92;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.teks-bimbingan {
-    display: inline-block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(to right, #ff0066, #6600ff);
-    padding: 20px 30px;
-    border-radius: 20px;
-    text-shadow: 2px 2px 0 red;
-}
-
-
-.faq-heading {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #7e22ce;
-    /* Ungu mencolok */
-    text-shadow: 1px 1px 0 red;
-}
-
-.accordion-button {
-    background-color: transparent;
-    color: #6b21a8;
-    /* Ungu gelap */
-    font-weight: bold;
-    border-bottom: 1px solid #e5e5e5;
-    transition: all 0.3s ease;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: #f3f4f6;
-    /* abu muda saat aktif */
-    color: #9333ea;
-    box-shadow: inset 0 -1px 0 #e5e5e5;
-}
-
-.accordion-body {
-    color: #333;
-    background-color: #fff;
-    padding: 1rem 1.25rem;
-}
-
-/* Foto Bulat Elegan */
-.profile-pic-wrapper {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, #9333ea, #f43f5e);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--light);
+    min-height: 100vh;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: #f1f1f1;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* Petunjuk penggunaan */
+.info-box {
+    background: white;
+    color: #333;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 18px var(--shadow);
+    text-align: left;
+}
+
+.info-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary);
+}
+
+.info-box ol {
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 25px var(--shadow);
+    color: var(--dark);
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    background: #f0f0f0;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-upload {
+    background: var(--secondary);
+    width: 100%;
+}
+
+.btn-download {
+    background: var(--primary);
+    flex: 1;
+}
+
+.btn-share {
+    background: var(--success);
+    flex: 1;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.profile-pic {
+.modal {
+    transition: all 0.3s ease;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
 }
 
-/* Heading Gradien */
-.text-purple {
-    color: #9333ea;
+.modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
 }
 
-/* Ikon Sosial Media */
-.social-icons a {
-    font-size: 1.25rem;
-    color: #555;
-    transition: color 0.3s ease;
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-.social-icons a:hover {
-    color: #9333ea;
-}
-
-.link-primary:hover {
-    text-decoration: underline;
-}
-
-.border-warning {
-    border-color: #facc15 !important;
-    /* warna kuning tua (Tailwind yellow-400) */
-}
-
-.text-gradient {
-    background: linear-gradient(to right, #8338ec, #ff006e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-
-    .teks-bimbingan {
-        font-size: 1.5rem;
-        padding: 1rem 1.2rem;
-    }
-
-    .faq-heading {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero {
-        padding: 3rem 1rem;
-    }
-
-    .profile-pic-wrapper {
-        width: 120px;
-        height: 120px;
-    }
-
-    .text-purple,
-    .accordion-button,
-    .accordion-body {
-        text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    #guru-kejuruan h3 {
-        font-size: 1.3rem;
-    }
-
-    #guru-kejuruan p {
-        font-size: 0.9rem;
-    }
-}
-
-
-
-/* Tombol PPDB yang mencolok dan interaktif */
-.btn-ppdb {
-    background: linear-gradient(135deg, #ffc107, #ff5722); /* kuning ke oranye */
-    color: #000 !important; /* teks jadi hitam agar kontras di tombol terang */
-    font-size: 1.2rem;
-    border: none;
-    animation: pulsePop 2s infinite, floatUp 6s ease-in-out infinite;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.btn-ppdb:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(255, 87, 34, 0.6);
-}
-
-/* Efek pulse glowing */
-@keyframes pulsePop {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 20px rgba(255, 193, 7, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
-    }
-}
-
-/* Efek mengambang pelan */
-@keyframes floatUp {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-
-/* Tombol Hijau Menarik */
-.btn-daftar {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: white !important;
+.social-buttons button {
     font-size: 1rem;
-    padding: 0.5rem 1.25rem;
+    padding: 0.75rem;
     border: none;
-    animation: zoomInOut 2s ease-in-out infinite;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    background: #eee;
+    color: #333;
+    transition: background 0.2s ease;
 }
 
-.btn-daftar:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+.social-buttons button:hover {
+    background: #ddd;
 }
 
-/* Tombol WA - Biru Muda */
-.btn-wa {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9); /* Gradasi biru */
-    color: white !important;
-    font-size: 1rem;
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+canvas {
+    max-width: 100%;
+    height: auto;
+    touch-action: none;
+    /* penting untuk gesture */
 }
 
-/* Hover hanya efek membesar dan glow */
-.btn-wa:hover {
-    transform: scale(1.06);
-    box-shadow: 0 0 18px rgba(14, 165, 233, 0.6);
+.scale-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.scale-controls input[type="range"] {
+    width: 200px;
 }
 
 
-
-/* Panah ➜ animasi */
-.arrow-icon {
-    display: inline-block;
-    animation: slideArrow 1.2s ease-in-out infinite;
-}
-
-@keyframes slideArrow {
-    0% {
-        transform: translateX(0);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
     }
 
-    50% {
-        transform: translateX(5px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-/* Zoom animasi tombol daftar */
-@keyframes zoomInOut {
-
-    0%,
-    100% {
+    to {
+        opacity: 1;
         transform: scale(1);
     }
-
-    50% {
-        transform: scale(1.08);
-    }
 }
 
-
-
-
-
-
-.countdown-timer .time-box {
-    background-color: linear-gradient(135deg, #38bdf8, #0ea5e9);
-    color: white;
-    border: 2px solid #0ea5e9;
-    border-radius: 10px;
-    padding: 6px 12px;
-    min-width: 60px;
+.modal-content {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 400px;
+    width: 90%;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25);
-    transition: transform 0.2s ease;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-.countdown-timer .time-box:hover {
-    transform: scale(1.05);
+.modal-content textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    resize: none;
 }
 
-.countdown-timer .time-value {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0ea5e9;
+.modal-content button {
+    margin-top: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.countdown-timer .time-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #ffffff;
-    margin-top: 2px;
-}
 
-.countdown-timer small {
-    font-size: 0.75rem;
-    color: #ffffff;
-    font-style: italic;
-}
-
-.countdown-info {
-    color: #fefefe;
-    /* Putih cerah */
-    font-size: 0.85rem;
-    font-style: italic;
-    margin-top: 0.5rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    /* agar lebih terbaca di background gelap */
-    display: inline-block;
-}
-
-@keyframes zoomInOut {
-
-    0%,
-    100% {
-        transform: scale(1);
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
     }
 
-    50% {
-        transform: scale(1.1);
+    .action-buttons {
+        flex-direction: column;
     }
-}
 
-.btn-zoom {
-    animation: zoomInOut 1.5s infinite ease-in-out;
+    .info-box {
+        font-size: 0.95rem;
+    }
 }
