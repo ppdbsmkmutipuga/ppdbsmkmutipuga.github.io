@@ -1,95 +1,185 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    const sections = document.querySelectorAll("section[id]");
-    const navbarCollapse = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll(".nav-link");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const upload = document.getElementById("upload");
 
-    // Auto-close navbar on link click (mobile)
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                toggle: false
-            });
-            bsCollapse.hide();
-        });
-    });
+const TEMPLATE = new Image();
+TEMPLATE.src = "images/twibbon.png";
 
-    // Scroll to top button behavior
-    if (scrollTopBtn) {
-        window.addEventListener("scroll", () => {
-            scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-        });
+let userImage = null;
+let imgX = 0, imgY = 0, imgScale = 1;
+let isDragging = false, dragStartX = 0, dragStartY = 0;
+let lastTouchDistance = 0;
+let initialPinchScale = imgScale;
 
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    }
+const circleCenterX = 384;
+const circleCenterY = 350;
+const circleRadius = 200;
 
-    // Smooth scroll for nav-link
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 70,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
+const scaleSlider = document.getElementById("scaleRange");
 
-    // Active nav-link on scroll
-    window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute("id");
-            }
-        });
+TEMPLATE.onload = () => drawCanvas();
 
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${current}`) {
-                link.classList.add("active");
-            }
-        });
-    });
+upload.addEventListener("change", function () {
+    const file = upload.files[0];
+    if (!file) return;
 
-    // Countdown Timer
-    const targetDate = new Date(2025, 6, 12, 12, 0, 0).getTime(); // 12 Juli 2025
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        userImage = new Image();
+        userImage.onload = function () {
+            const diameter = circleRadius * 2;
+            const scaleX = diameter / userImage.width;
+            const scaleY = diameter / userImage.height;
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+            // Hitung skala awal agar foto menutupi area lingkaran
+            imgScale = Math.max(scaleX, scaleY) * 1.15;
 
-        const cdDay = document.getElementById("cd-day");
-        const cdHour = document.getElementById("cd-hour");
-        const cdMinute = document.getElementById("cd-minute");
-        const cdSecond = document.getElementById("cd-second");
+            // Hitung posisi awal agar foto berada di tengah lingkaran
+            const newW = userImage.width * imgScale;
+            const newH = userImage.height * imgScale;
 
-        if (!cdDay || !cdHour || !cdMinute || !cdSecond) return;
+            imgX = circleCenterX - newW / 2;
+            imgY = circleCenterY - newH / 2;
 
-        if (distance <= 0) {
-            cdDay.textContent = "00";
-            cdHour.textContent = "00";
-            cdMinute.textContent = "00";
-            cdSecond.textContent = "00";
-            return;
-        }
+            // ✅ Update slider zoom agar sesuai dengan skala awal
+            scaleSlider.min = (imgScale * 0.5).toFixed(2);  // bisa diperkecil hingga 50%
+            scaleSlider.max = (imgScale * 3).toFixed(2);    // bisa diperbesar hingga 3x
+            scaleSlider.step = "0.01";
+            scaleSlider.value = imgScale.toFixed(2);
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        cdDay.textContent = String(days).padStart(2, "0");
-        cdHour.textContent = String(hours).padStart(2, "0");
-        cdMinute.textContent = String(minutes).padStart(2, "0");
-        cdSecond.textContent = String(seconds).padStart(2, "0");
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+            drawCanvas();
+        };
+        userImage.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
 });
+
+
+scaleSlider.addEventListener("input", () => {
+    if (!userImage) return;
+    imgScale = parseFloat(scaleSlider.value);
+    const newW = userImage.width * imgScale;
+    const newH = userImage.height * imgScale;
+    imgX = circleCenterX - newW / 2;
+    imgY = circleCenterY - newH / 2;
+    drawCanvas();
+});
+
+canvas.addEventListener("mousedown", e => {
+    if (!userImage) return;
+    isDragging = true;
+    dragStartX = e.offsetX - imgX;
+    dragStartY = e.offsetY - imgY;
+});
+canvas.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    imgX = e.offsetX - dragStartX;
+    imgY = e.offsetY - dragStartY;
+    drawCanvas();
+});
+canvas.addEventListener("mouseup", () => isDragging = false);
+canvas.addEventListener("mouseleave", () => isDragging = false);
+
+// Mobile gesture
+canvas.addEventListener("touchstart", function (e) {
+    if (!userImage) return;
+    if (e.touches.length === 1) {
+        isDragging = true;
+        const touch = e.touches[0];
+        dragStartX = touch.clientX - imgX;
+        dragStartY = touch.clientY - imgY;
+    } else if (e.touches.length === 2) {
+        isDragging = false;
+        lastTouchDistance = getTouchDistance(e.touches);
+        initialPinchScale = imgScale;
+    }
+}, { passive: false });
+
+canvas.addEventListener("touchmove", function (e) {
+    if (!userImage) return;
+    e.preventDefault();
+    if (e.touches.length === 1 && isDragging) {
+        const touch = e.touches[0];
+        imgX = touch.clientX - dragStartX;
+        imgY = touch.clientY - dragStartY;
+        drawCanvas();
+    } else if (e.touches.length === 2) {
+        const newDistance = getTouchDistance(e.touches);
+        const zoomFactor = newDistance / lastTouchDistance;
+        imgScale = initialPinchScale * zoomFactor;
+        scaleSlider.value = imgScale.toFixed(2);
+        const newW = userImage.width * imgScale;
+        const newH = userImage.height * imgScale;
+        imgX = circleCenterX - newW / 2;
+        imgY = circleCenterY - newH / 2;
+        drawCanvas();
+    }
+}, { passive: false });
+
+canvas.addEventListener("touchend", () => {
+    isDragging = false;
+});
+
+function getTouchDistance(touches) {
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+}
+
+function drawCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (userImage) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(circleCenterX, circleCenterY, circleRadius, 0, Math.PI * 2);
+        ctx.clip();
+        ctx.drawImage(userImage, imgX, imgY, userImage.width * imgScale, userImage.height * imgScale);
+        ctx.restore();
+    }
+    ctx.drawImage(TEMPLATE, 0, 0, canvas.width, canvas.height);
+    document.getElementById("shareSection").style.display = userImage ? "flex" : "none";
+}
+
+function downloadImage() {
+    if (!userImage) return alert("⚠️ Silakan upload foto terlebih dahulu.");
+    const link = document.createElement("a");
+    link.download = "Twibbon_MPLS2025.png";
+    link.href = canvas.toDataURL("image/png");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+function shareImage() {
+    if (!userImage) return alert("⚠️ Silakan upload foto terlebih dahulu.");
+    canvas.toBlob(blob => {
+        const file = new File([blob], "Twibbon_MPLS2025.png", { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            navigator.share({
+                title: "Twibbon MPLS 2025",
+                text: "Aku siap mengikuti MPLS 2025 di SMK MUTIPUGA!",
+                files: [file]
+            }).catch(console.error);
+        } else {
+            alert("❌ Perangkat tidak mendukung berbagi otomatis.");
+        }
+    });
+
+    const scaleSlider = document.getElementById("scaleRange");
+
+    scaleSlider.addEventListener("input", () => {
+        if (!userImage) return;
+
+        imgScale = parseFloat(scaleSlider.value);
+
+        const newW = userImage.width * imgScale;
+        const newH = userImage.height * imgScale;
+
+        imgX = circleCenterX - newW / 2;
+        imgY = circleCenterY - newH / 2;
+
+        drawCanvas();
+    });
+
+}
+
