@@ -1,76 +1,476 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #667eea, #764ba2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: #f5f6fa;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 32px;
-  max-width: 480px;
-  width: 90%;
-  text-align: center;
-  animation: fadeIn 0.6s ease-in-out;
+.card-custom,
+.profile-pic-wrapper,
+.footer,
+.hero {
+    border-radius: 20px;
 }
 
-.card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #764ba2;
-  margin-bottom: 16px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.card h2 {
-  margin: 12px 0 6px;
-  font-size: 1.5rem;
-  color: #333;
+/* CSS Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card p {
-  margin: 4px 0;
-  color: #555;
-  font-size: 0.95rem;
+
+/* Responsive utility */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
 }
 
-.badge {
-  display: inline-block;
-  background-color: #e0e7ff;
-  color: #4338ca;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  margin-top: 10px;
+.navbar-brand img {
+    max-height: 32px;
+    width: auto;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.list-group-item {
+    background-color: #f9fafc;
+    border: none;
 }
 
-@media (max-width: 500px) {
-  .card {
-    padding: 24px;
-  }
+.prestasi-title {
+    text-shadow:
+        -0.50px -0.50px 0 rgb(251, 255, 0),
+        0.50px -0.50px 0 rgb(251, 255, 0),
+        -0.50px 0.50px 0 rgb(251, 255, 0),
+        0.50px 0.50px 0 rgb(251, 255, 0);
+}
 
-  .card h2 {
+
+.prestasi-section {
+    background: linear-gradient(180deg, #8a2be2, #b266ff);
+    color: white;
+}
+
+.sertifikat-img-container {
+    max-width: 800px;
+}
+
+.hero {
+    background: linear-gradient(to right, #673ab7, #512da8);
+    /* ungu tua */
+    color: white;
+    padding: 4rem 2rem;
+    border-bottom-left-radius: 60px;
+    text-align: center;
+}
+
+
+.hero h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.hero {
+    transition: background 0.5s ease-in-out;
+}
+
+.highlight-badge {
+    background-color: #ffc107;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.card-custom {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    background: #fff;
+}
+
+.footer {
+    background-color: #512da8;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-top-left-radius: 60px;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    background-color: #512da8;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: #311b92;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.teks-bimbingan {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ff0066, #6600ff);
+    padding: 20px 30px;
+    border-radius: 20px;
+    text-shadow: 2px 2px 0 red;
+}
+
+
+.faq-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #7e22ce;
+    /* Ungu mencolok */
+    text-shadow: 1px 1px 0 red;
+}
+
+.accordion-button {
+    background-color: transparent;
+    color: #6b21a8;
+    /* Ungu gelap */
+    font-weight: bold;
+    border-bottom: 1px solid #e5e5e5;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f3f4f6;
+    /* abu muda saat aktif */
+    color: #9333ea;
+    box-shadow: inset 0 -1px 0 #e5e5e5;
+}
+
+.accordion-body {
+    color: #333;
+    background-color: #fff;
+    padding: 1rem 1.25rem;
+}
+
+/* Foto Bulat Elegan */
+.profile-pic-wrapper {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #9333ea, #f43f5e);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* Heading Gradien */
+.text-purple {
+    color: #9333ea;
+}
+
+/* Ikon Sosial Media */
+.social-icons a {
     font-size: 1.25rem;
-  }
+    color: #555;
+    transition: color 0.3s ease;
+}
 
-  .card img {
-    width: 80px;
-    height: 80px;
-  }
+.social-icons a:hover {
+    color: #9333ea;
+}
+
+.link-primary:hover {
+    text-decoration: underline;
+}
+
+.border-warning {
+    border-color: #facc15 !important;
+    /* warna kuning tua (Tailwind yellow-400) */
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #8338ec, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .teks-bimbingan {
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .faq-heading {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .profile-pic-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .text-purple,
+    .accordion-button,
+    .accordion-body {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    #guru-kejuruan h3 {
+        font-size: 1.3rem;
+    }
+
+    #guru-kejuruan p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* Tombol PPDB yang mencolok dan interaktif */
+.btn-ppdb {
+    background: linear-gradient(135deg, #ffc107, #ff5722);
+    /* kuning ke oranye */
+    color: #000 !important;
+    /* teks jadi hitam agar kontras di tombol terang */
+    font-size: 1.2rem;
+    border: none;
+    animation: pulsePop 2s infinite, floatUp 6s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-ppdb:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 87, 34, 0.6);
+}
+
+/* Efek pulse glowing */
+@keyframes pulsePop {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 193, 7, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
+}
+
+/* Efek mengambang pelan */
+@keyframes floatUp {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Tombol Hijau Menarik */
+.btn-daftar {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white !important;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    animation: zoomInOut 2s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-daftar:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+/* Tombol WA - Biru Muda */
+.btn-wa {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    /* Gradasi biru */
+    color: white !important;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+/* Hover hanya efek membesar dan glow */
+.btn-wa:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 18px rgba(14, 165, 233, 0.6);
+}
+
+
+
+/* Panah ➜ animasi */
+.arrow-icon {
+    display: inline-block;
+    animation: slideArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes slideArrow {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Zoom animasi tombol daftar */
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+
+
+
+
+.countdown-timer .time-box {
+    background-color: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: white;
+    border: 2px solid #0ea5e9;
+    border-radius: 10px;
+    padding: 6px 12px;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.countdown-timer .time-box:hover {
+    transform: scale(1.05);
+}
+
+.countdown-timer .time-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0ea5e9;
+}
+
+.countdown-timer .time-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 2px;
+}
+
+.countdown-timer small {
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.countdown-info {
+    color: #fefefe;
+    /* Putih cerah */
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    /* agar lebih terbaca di background gelap */
+    display: inline-block;
+}
+
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.btn-zoom {
+    animation: zoomInOut 1.5s infinite ease-in-out;
 }
