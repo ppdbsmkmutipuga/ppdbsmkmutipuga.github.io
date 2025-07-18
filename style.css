@@ -1,35 +1,30 @@
-/* ==== Reset dan Box Sizing === */
 * {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
-}
-
-/* ==== Body & Container ==== */
-body {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  /* cegah scroll horizontal */
-  overflow-x: hidden;
+  padding: 20px;
 }
 
-/* ==== Img & iframe ==== */
-img, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ==== Card utama ==== */
 .card {
   background: #fff;
-  padding: 2rem;
+  padding: 40px;
   max-width: 600px;
   width: 100%;
   border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.5s ease;
 }
 
+/* Fade in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -41,67 +36,202 @@ img, iframe {
   }
 }
 
-/* ==== General Section Styling ==== */
-section {
-  padding: 2rem 1rem;
-}
-
-/* ==== Headings ==== */
 h2 {
   text-align: center;
   color: #333;
+  margin-bottom: 24px;
 }
 
-/* ==== Buttons ==== */
-.btn {
-  white-space: nowrap;
+/* Form */
+.form-group {
+  margin-bottom: 20px;
 }
 
-/* ==== Custom Cards ==== */
-.card-custom {
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: #667eea;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Ekskul Grid */
+.ekskul-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (min-width: 600px) {
+  .ekskul-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ekskul Card */
+.ekskul-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-  font-size: 1rem;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: #f0f4ff;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-/* ==== Utility Classes ==== */
-.sertifikat-img-container {
-  max-width: 450px;
-  margin: 0 auto;
+.ekskul-card:hover {
+  border-color: #667eea;
+  background-color: #e5edff;
 }
 
-.countdown-timer .time-box {
-  flex: 1 1 80px;
-  min-width: 70px;
+.ekskul-card input[type="checkbox"] {
+  margin-top: 4px;
 }
 
-/* ==== Mobile Adjustments ==== */
+/* Text Styles */
+.title {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.desc {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #667eea;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5a67d8;
+  transform: scale(1.02);
+}
+
+/* Notifikasi */
+.notif {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffe4e6;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+.hidden,
+.notif.hidden {
+  display: none;
+}
+
+/* Ekskul Wajib */
+.ekskul-wajib-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 10px;
+}
+
+.ekskul-wajib-list li {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
   .card {
-    padding: 1.5rem;
-    margin: 1rem;
+    padding: 24px 20px;
+    margin: 16px;
     border-radius: 12px;
   }
+
   h2 {
-    font-size: 1.7rem;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
-  .card-custom {
-    font-size: 0.95rem;
+
+  .form-group label,
+  .title {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .notif {
+    font-size: 13px;
+    padding: 8px;
   }
 }
 
-@media (max-width: 576px) {
-  .hero h1 {
-    font-size: 1.5rem;
+@media (max-width: 480px) {
+  .ekskul-grid {
+    grid-template-columns: 1fr;
   }
-  .accordion-button {
-    font-size: 0.95rem;
+
+  .ekskul-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .ekskul-card input[type="checkbox"] {
+    margin-top: 0;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  .card {
+    max-height: 95vh;
+    overflow-y: auto;
   }
 }
