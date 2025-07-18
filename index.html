@@ -1,647 +1,76 @@
-<!DOCTYPE html>
-<html lang="id">
+* {
+  box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="PPDB SMK Muhammadiyah 3 Pucang Gading - Sekolah Digital Kreatif Jurusan DKV. Gratis SPP 1 tahun untuk kelas X!" />
-    <meta name="keywords"
-        content="PPDB, SMK Muhammadiyah, DKV, Sekolah Digital, Gratis SPP, Ekstrakurikuler, IT Developer Club" />
-    <meta name="author" content="SMK Mutipuga" />
-    <title>PPDB SMK Mutipuga 2025/2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                <img src="images/logo.png" alt="Logo SMK Mutipuga" height="32" class="me-2">
-                <span class="d-none d-sm-inline">SMK Muhammadiyah 3 Pucang Gading</span>
-                <span class="d-inline d-sm-none">SMK MUTIPUGA</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://ppdbsmkmutipuga.github.io/">Beranda</a></li>
-                      <li class="nav-item"><a class="nav-link" href="https://ppdbsmkmutipuga.github.io/dkv/">Desain Komunikasi Visual</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://ppdbsmkmutipuga.github.io/kurikulumdesain/">Kurikulum</a></li>
-                     <li class="nav-item"><a class="nav-link" href="#prospekkerja">Prospek Kerja</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ekskul">Ekstrakurikuler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pendaftaran">Pendaftaran</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
 
- <!-- Header Section -->
-<header class="hero text-center text-white py-5">
-  <div class="container" data-aos="zoom-in">
-    <h1 class="display-5 fw-bold mb-3">
-      PPDB 2025/2026<br>SMK Muhammadiyah 3 Pucang Gading
-    </h1>
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #764ba2;
+  margin-bottom: 16px;
+}
 
-        <!-- Subjudul -->
-        <p class="lead mb-3">
-            Sekolah Digital Kreatif dengan Jurusan Desain Komunikasi Visual (DKV)
-        </p>
+.card h2 {
+  margin: 12px 0 6px;
+  font-size: 1.5rem;
+  color: #333;
+}
 
-        <!-- Badge Promo -->
-        <div class="badge bg-warning text-dark fs-6 py-2 px-3 rounded-pill mb-4">
-            Gratis SPP 1 Tahun untuk Kelas X!
-        </div>
+.card p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
 
-        <!-- Tombol Aksi -->
-        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-3">
-            <!-- Tombol Daftar -->
-            <a href="https://s.id/PPDBSMKMUTIPUGA" target="_blank"
-                class="btn btn-daftar fw-bold px-4 py-2 rounded-pill shadow-sm d-inline-flex align-items-center gap-2"
-                data-aos="zoom-in-up" data-aos-delay="600">
-                📢 Daftar Sekarang <span class="arrow-icon">➜</span>
-            </a>
+.badge {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
 
-            <!-- Tombol WA -->
-            <a href="https://wa.me/6281325977099?text=Halo%20Pak%20Jasno%2C%20saya%20ingin%20bertanya%20tentang%20PPDB%20SMK%20Mutipuga."
-                target="_blank"
-                class="btn btn-wa fw-bold px-4 py-2 rounded-pill shadow-sm d-inline-flex align-items-center gap-2"
-                data-aos="zoom-in-up" data-aos-delay="800">
-                💬 Tanya via WhatsApp
-            </a>
-        </div>
-    </div>
-</header>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
- <!-- Countdown Timer -->
-   <!-- Countdown Timer -->
-<div class="countdown-timer mt-3" data-aos="zoom-in-up" data-aos-delay="900">
-    <div class="d-flex justify-content-center gap-3 flex-wrap">
-        <div class="time-box text-center">
-            <span id="cd-day" class="time-value fs-3 fw-bold">00</span>
-            <div class="time-label text-secondary">Hari</div>
-        </div>
-        <div class="time-box text-center">
-            <span id="cd-hour" class="time-value fs-3 fw-bold">00</span>
-            <div class="time-label text-secondary">Jam</div>
-        </div>
-        <div class="time-box text-center">
-            <span id="cd-minute" class="time-value fs-3 fw-bold">00</span>
-            <div class="time-label text-secondary">Menit</div>
-        </div>
-        <div class="time-box text-center">
-            <span id="cd-second" class="time-value fs-3 fw-bold">00</span>
-            <div class="time-label text-secondary">Detik</div>
-        </div>
-    </div>
+@media (max-width: 500px) {
+  .card {
+    padding: 24px;
+  }
 
-    <!-- Info Pendaftaran -->
-    <div class="text-center mt-3">
-        <p class="countdown-info text-danger fw-semibold">
-            ⏳ Pendaftaran ditutup <strong>12 Juli 2025</strong> pukul <strong>12.00 WIB</strong>
-        </p>
-    </div>
-</div>
+  .card h2 {
+    font-size: 1.25rem;
+  }
 
-
-    <section class="container py-5">
-        <div class="text-center mb-4">
-            <h2 class="fw-bold" style="font-size: 2.2rem;">
-                <span class="text-danger">Pernah</span> <span class="text-warning">Merasakan Ini?</span>
-            </h2>
-            <div class="my-2">
-                <i class="bi bi-arrow-down-circle-fill text-warning" style="font-size: 2rem;"></i>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <ul class="list-group list-group-flush fs-5">
-                    <li class="list-group-item">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>
-                        Ingin menguasai keahlian digital seperti desain, editing video, animasi, dan pemrograman?
-                    </li>
-                    <li class="list-group-item">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>
-                        Sudah belajar sendiri tapi sulit berkembang tanpa bimbingan?
-                    </li>
-                    <li class="list-group-item">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>
-                        Ingin memiliki keahlian yang siap pakai untuk masa depan dan membuka berbagai peluang karier?
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-10 text-center">
-                <p class="text-muted fst-italic fs-6">
-                    Kamu tidak sendiri. Semua orang yang jago hari ini pun <strong>dulu pernah bingung seperti
-                        kamu.</strong><br>
-                    Bahkan para ahli dan profesional pun memulai dari nol.<br>
-                    Bedanya, mereka <strong>memilih tempat belajar yang tepat</strong> dan <strong>tidak menyerah di
-                        tengah jalan</strong>.
-                </p>
-            </div>
-        </div>
-
-        <div class="text-end mt-4">
-            <i class="bi bi-emoji-thinking fs-1 text-secondary"></i>
-        </div>
-    </section>
-
-
-    <section class="container py-5 d-flex flex-column align-items-center text-center" id="bimbingan">
-        <div class="teks-bimbingan mb-4">
-            Mau Dibimbing Belajarnya Sampai Bisa?
-        </div>
-       <!-- Tombol Aksi -->
-        <a href="https://s.id/PPDBSMKMUTIPUGA" target="_blank" rel="noopener noreferrer"
-            class="btn btn-success fw-bold mt-4 px-4 py-2 rounded-pill shadow-sm btn-zoom" data-aos="zoom-in"
-            data-aos-delay="400">
-            Iya, Aku Mau!
-        </a>
-    </section>
-    <section class="container py-5">
-        <div class="text-center mb-4">
-            <h2 class="fw-bold text-gradient fs-3">Gagal Masuk Sekolah Negeri? Tenang, Masih Ada Solusi!</h2>
-            <p class="text-muted fs-6 mt-3">Hari ini, nilai ujian bisa gagal membawa kamu masuk sekolah negeri.<br>
-                Tapi besok, dunia kerja tidak peduli kamu lulus dari mana.</p>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8">
-                <div class="bg-light border rounded-4 p-4 shadow-sm">
-                    <p class="mb-3"><strong>Yang mereka cari?</strong><br>
-                        Orang yang <strong>punya skill</strong>, <strong>bisa kerja</strong>, dan <strong>siap
-                            beradaptasi</strong>.</p>
-
-                    <ul class="list-unstyled mb-3">
-                        <li>📌 Belajar langsung dari <strong>praktisi industri</strong></li>
-                        <li>📌 Setiap pelajaran diarahkan ke <strong>dunia nyata</strong></li>
-                        <li>📌 <strong>Proyek riil</strong>, bukan hanya teori</li>
-                    </ul>
-
-                    <p class="mb-3">Kamu tidak hanya lulus, tapi juga <strong>siap bersaing</strong>.</p>
-                    <p class="fst-italic text-primary-emphasis">✨ Karena yang penting bukan tempatmu belajar — tapi
-                        seberapa besar kamu siap menghadapi dunia kerja dengan keterampilan nyata.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="alert alert-primary mt-4 text-center fw-semibold shadow-sm rounded-pill">
-            🎓 Lulusan SMK Mutipuga siap kerja dan bersaing di dunia industri!
-        </div>
-    </section>
-
- 
-<section class="container py-5">
-  <div class="row g-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card-custom">📖 Pembinaan Akhlak</div>
-    </div>
-        <div class="col-12 col-sm-6 col-md-4">
-                <div class="card-custom">🕌 Program Tahfidz dan Ngaji</div>
-            </div>
-          <div class="col-12 col-sm-6 col-md-4">
-                <div class="card-custom">🎓 Kuliah di UNIMUS lewat Beasiswa</div>
-            </div>
-          <div class="col-12 col-sm-6 col-md-4">
-                <div class="card-custom">🏠 Asrama Putra & Putri</div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="card-custom">💸 Gratis SPP 1 Tahun untuk kelas X</div>
-            </div>
-           <div class="col-12 col-sm-6 col-md-4">
-                <div class="card-custom">🖥️ Fasilitas Lengkap & Modern</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Prospek Kerja Section -->
-<section id="prospekkerja" class="bg-light py-5" data-aos="fade-up">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-4">Prospek Kerja Lulusan</h2>
-        <p class="text-center mb-5">
-            Lulusan program Desain Grafis SMK Mutipuga memiliki peluang besar untuk berkarier di berbagai bidang industri kreatif, baik sebagai profesional maupun wirausahawan.
-        </p>
-        <div class="row g-4">
-            <div class="col-md-4 text-center">
-                <i class="bi bi-palette-fill fs-1 text-primary"></i>
-                <h5 class="mt-3">Desainer Grafis</h5>
-                <p>Menghasilkan karya visual untuk media cetak dan digital seperti poster, logo, brosur, dan konten media sosial.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="bi bi-laptop-fill fs-1 text-success"></i>
-                <h5 class="mt-3">UI/UX Designer</h5>
-                <p>Merancang antarmuka aplikasi dan website agar menarik dan mudah digunakan oleh pengguna.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="bi bi-camera-reels-fill fs-1 text-danger"></i>
-                <h5 class="mt-3">Content Creator</h5>
-                <p>Membuat konten visual kreatif untuk media sosial, YouTube, dan platform digital lainnya.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="bi bi-printer-fill fs-1 text-warning"></i>
-                <h5 class="mt-3">Operator Percetakan</h5>
-                <p>Bekerja di industri percetakan untuk memproduksi media promosi seperti spanduk, banner, dan majalah.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="bi bi-shop-window fs-1 text-info"></i>
-                <h5 class="mt-3">Freelancer / Wirausaha</h5>
-                <p>Membuka jasa desain grafis secara mandiri dan bekerja lepas untuk berbagai klien.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="bi bi-brush-fill fs-1 text-secondary"></i>
-                <h5 class="mt-3">Ilustrator Digital</h5>
-                <p>Menggambar ilustrasi untuk buku, komik, konten edukatif, dan kebutuhan branding produk.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section class="prestasi-section py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-3 prestasi-title">
-                <span class="text-danger">Bukti Nyata</span> <span class="text-warning">Perkembangan Siswa Kami</span>
-            </h2>
-
-            <p class="fs-5 mb-4">
-                <i class="bi bi-award-fill text-warning me-2 fs-4"></i>
-                Dulu belum bisa apa-apa, sekarang Juara 1 Lomba Informatika Tingkat Kabupaten berkat pembinaan di
-                <strong>SMK Mutipuga</strong>.
-            </p>
-
-            <div class="mx-auto mb-4 sertifikat-img-container">
-                <img src="images/sertifikathelen.jpg" alt="Sertifikat Juara 1 Informatika"
-                    class="img-fluid rounded shadow">
-            </div>
-
-            <p class="fs-5 mt-5 fw-semibold text-warning">
-                Ingin mendapatkan hasil serupa?<br>
-                <span class="text-white">Segera daftar sekarang dan mulai perjalananmu!</span>
-            </p>
-
-            <!-- Tombol Aksi -->
-          <!-- Tombol Aksi -->
-            <a href="https://s.id/PPDBSMKMUTIPUGA" target="_blank" rel="noopener noreferrer"
-                class="btn btn-warning fw-bold mt-4 px-4 py-2 rounded-pill shadow-sm btn-zoom" data-aos="zoom-in"
-                data-aos-delay="400">
-                Iya, Aku Ingin!
-            </a>
-        </div>
-    </section>
-
-    <section id="jurusan" class="container py-5">
-        <h2 class="section-title">Jurusan Desain Komunikasi Visual Penuh Inspirasi</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card-custom">📚 Kurikulum Berbasis Proyek</div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-custom">👨‍🏫 Praktisi Profesional</div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-custom">💻 Software Desain Terkini</div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-custom">🌍 Peluang Kerja Freelance</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ekskul" class="container py-5">
-        <h2 class="section-title">Kegiatan & Ekstrakurikuler Seru</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card-custom">💻 Coding di Lab</div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-custom">🖌️ Desain Grafis</div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-custom">📖 Ngaji Bersama</div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-custom">🏅 Tapak Suci, Futsal & Seni</div>
-            </div>
-        </div>
-    </section>
-    <section class="container py-5">
-        <h2 class="section-title">Gabung dengan IT Developer Club!</h2>
-        <p class="text-center">Eksplorasi Minat – Spesialisasi – Kompetisi Nasional</p>
-        <div class="row g-4 mt-4">
-            <div class="col-md-6">
-                <div class="card-custom">
-                    <strong>5 Bidang Spesialisasi:</strong>
-                    <ul>
-                        <li>🎮 3D Animasi</li>
-                        <li>🎨 Desain Grafis</li>
-                        <li>📱 Pemrograman Android</li>
-                        <li>🌐 Pemrograman Website</li>
-                        <li>🕹️ Pemrograman Game</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-custom">
-                    <strong>Testimoni Siswa:</strong>
-                    <blockquote>"IT Developer Club membuka peluang bagi saya ...<br><small>– Helen Lesteesia</small>
-                    </blockquote>
-                    <hr>
-                    <p><strong>Jadwal Latihan:</strong><br>Senin & Rabu, 14.00–16.00 WIB<br>Lokasi: Lab Komputer</p>
-                    <p><strong>Keuntungan:</strong><br>
-                        ✅ Akses alat & software profesional<br>
-                        ✅ Kompetisi tingkat nasional<br>
-                        ✅ Portfolio kuliah & kerja</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="guru-kejuruan" class="container py-5">
-        <div class="row align-items-center justify-content-center">
-            <!-- FOTO DAN IDENTITAS -->
-            <div class="col-md-4 text-center mb-4 mb-md-0">
-                <div class="profile-pic-wrapper mx-auto">
-                    <img src="images/nanda.jpg" alt="Foto Nanda Adisaputra" class="profile-pic img-fluid" />
-                </div>
-                <div class="mt-3">
-                    <h5 class="fw-bold mb-1">Nanda Adisaputra, S.Kom, C.S.O.T</h5>
-                    <p class="text-muted small mb-1">Guru Praktisi Mapel Produktif SMK MUTIPUGA</p>
-                    <p class="text-muted small fst-italic">Certified Skill of Trainer</p>
-                    <!-- Sosial Media -->
-                    <div class="social-icons mt-2">
-                        <a href="https://linkedin.com/in/nandaadisaputra" target="_blank" class="me-2">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://instagram.com/nanda_coding_android" target="_blank" class="me-2">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TEKS PROFIL -->
-            <div class="col-md-8">
-                <h2 class="fw-bold text-purple mb-3">Profil Guru Mapel Produktif</h2>
-                <ul class="list-unstyled small text-body">
-                    <li class="mb-2">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>
-                        <a href="https://jateng.tribunnews.com/2021/04/01/ini-para-wisudawan-terbaik-di-wisuda-ke-61-usm"
-                            target="_blank" class="text-decoration-none fw-semibold link-primary">
-                            Wisudawan Terbaik S1 Teknik Informatika – Universitas Semarang
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>
-                        <a href="https://www.dicoding.com/users/nanda_adisaputra/academies?graduation_status=graduated"
-                            target="_blank" class="text-decoration-none fw-semibold link-primary">
-                            Lulusan Dicoding Academy Kelas Expert
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>Mentor Android Developer Kelas
-                        Industri
-                        <strong>Crocodic
-                            Academy</strong>
-                    </li>
-
-                    <li class="mb-2">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>Narasumber Nasional
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>Praktisi Mengajar & Asisten Dosen –
-                        FTIK
-                        Universitas Semarang
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-check-circle-fill text-success me-2"></i>Praktisi di PT Taman Kreasi Indonesia
-                        (2021 – Sekarang)
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="container py-5">
-        <div class="row align-items-center g-4">
-            <!-- Icon (hanya tampil di layar md ke atas) -->
-            <div class="col-md-1 text-center d-none d-md-block">
-                <i class="bi bi-lightbulb-fill text-warning" style="font-size: 2.5rem;"></i>
-            </div>
-
-            <!-- Teks utama -->
-            <div class="col-12 col-md-11">
-                <div class="p-4 p-md-5 bg-light border-start border-4 border-warning rounded shadow-sm">
-                    <h3 class="fw-bold mb-2 text-dark fs-4 fs-md-3">
-                        Kami Bawa Dunia Kerja ke Kelas
-                    </h3>
-                    <p class="mb-0 text-secondary small small-md fs-6">
-                        Di saat banyak sekolah hanya mengajarkan <strong>teori</strong>, kami hadirkan
-                        <strong>praktisi industri</strong> langsung ke ruang kelas. Siswa belajar dari
-                        pengalaman nyata yang relevan dengan dunia kerja masa kini.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <section id="pendaftaran" class="container py-5">
-        <h2 class="section-title">Informasi Pendaftaran</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card-custom">
-                    <strong>Syarat Pendaftaran:</strong>
-                    <ul>
-                        <li>📝 Mengisi Formulir</li>
-                        <li>📄 Fotokopi Ijazah atau Surat Keterangan Kelulusan (SKL)</li>
-                        <li>📁 Fotokopi Kartu Keluarga, KTP Orang Tua, Akta Kelahiran</li>
-                        <li>🖼️ Pas Foto 3x4 (4 lembar)</li>
-                    </ul>
-                    <div class="highlight-badge mt-3">Gratis SPP 1 Tahun</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-custom">
-                    <strong>Biaya & Kontak:</strong>
-                    <ul class="mb-2">
-                        <li>💳 Seragam: Rp1.000.000,-</li>
-                        <li>📚 SPP Kelas XI & XII: Rp100.000,- / bulan</li>
-                        <li>🏫 Wakaf Gelombang 1: Rp500.000,-</li>
-                        <li>🧪 Praktikum: Rp65.000,- / bulan</li>
-                    </ul>
-                    <hr>
-                    <p>📱 WhatsApp: 081325977099 - (Pak Jasno)<br>
-                        ✉️ Email: smkmuh3puding@gmail.com<br>
-                        📍 Alamat: Jl. Pucang Gading Raya, Batursari</p>
-                    <!-- Tombol WhatsApp -->
-                    <a href="https://wa.me/6281325977099?text=Halo%20Pak%20Jasno%2C%20saya%20ingin%20menanyakan%20tentang%20pendaftaran%20PPDB%20SMK%20Mutipuga"
-                        class="btn btn-success mt-2" target="_blank" rel="noopener noreferrer">
-                        Hubungi via WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Info tambahan -->
-        <div class="mt-5 text-center">
-            <h5 class="fw-bold">💡 Bisa Daftar Langsung di Sekolah!</h5>
-            <p class="mb-3">Datang langsung ke SMK Muhammadiyah 3 Pucang Gading pada jam kerja untuk melakukan
-                pendaftaran offline.</p>
-
-            <!-- Peta Lokasi -->
-            <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.434961569062!2d110.495024!3d-7.0449252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708ddd638db5d9%3A0x133d4f8a65edcaf!2sSMK%20Muhammadiyah%203%20Pucang%20Gading!5e0!3m2!1sid!2sid!4v1720000000000!5m2!1sid!2sid"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-        </div>
-    </section>
-
-    
-    <section id="faq" class="container py-5">
-        <div class="text-center mb-4">
-            <h2 class="faq-heading">FAQ</h2>
-            <p class="text-muted">Pertanyaan yang sering ditanyakan calon siswa dan orang tua.</p>
-        </div>
-
-        <div class="accordion accordion-flush" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse1">
-                        Apa keunggulan SMK Mutipuga dibanding sekolah lain?
-                    </button>
-                </h2>
-                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        SMK Mutipuga tidak hanya mengajarkan teori, tetapi fokus pada pembelajaran praktek.
-                        Siswa dibimbing menguasai keahlian digital seperti desain grafis, editing video, animasi,
-                        pemrograman, serta pembinaan akhlak dan karakter Islami.
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse2">
-                        Apakah harus punya kemampuan dasar sebelum masuk?
-                    </button>
-                </h2>
-                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Tidak. Semua siswa akan dibimbing dari dasar. Program kami dirancang agar siswa tanpa pengalaman
-                        sekalipun bisa berkembang secara bertahap hingga mahir.
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse3">
-                        Apakah setelah lulus langsung bisa bekerja?
-                    </button>
-                </h2>
-                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Kami membekali siswa dengan keahlian praktis yang dibutuhkan industri saat ini. Selain itu,
-                        tersedia program magang industri untuk memberikan pengalaman kerja sejak dini.
-                       </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq4">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse4">
-                        Bagaimana pembinaan karakter dan kedisiplinan siswa?
-                    </button>
-                </h2>
-                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Pembinaan karakter dan kedisiplinan siswa di SMK Muhammadiyah 3 Pucang Gading
-                            (Mutipuga)</strong>
-                        dilakukan secara konsisten setiap hari melalui berbagai program keagamaan dan kegiatan
-                        pembiasaan positif.
-
-                        Setiap pagi, siswa mengikuti apel pagi yang diawali dengan <strong>pembacaan Asmaul
-                            Husna</strong> secara
-                        bersama-sama. Kegiatan ini dilanjutkan dengan <strong>shalat dhuha berjamaah</strong>, dan
-                        kemudian membaca
-                        beberapa surat dalam <strong>juz amma</strong>. Pembiasaan ini bertujuan agar siswa terbiasa dan
-                        hafal Al-Qur'an
-                        secara bertahap melalui rutinitas harian.
-
-                        Setelah itu, siswa mengikuti <strong>program tahsin</strong> untuk memperbaiki bacaan Al-Qur'an
-                        mereka. Siswa
-                        yang sudah lancar akan melanjutkan ke <strong>program tahfidz</strong>, yakni menghafal
-                        Al-Qur'an secara
-                        terstruktur sesuai kemampuannya.
-
-                        Saat waktu <strong>shalat dhuhur</strong>, seluruh siswa melaksanakan shalat berjamaah diikuti
-                        dengan <strong>dzikir
-                            bersama</strong> yang dipimpin oleh salah satu siswa. Setelah dzikir, kegiatan dilanjutkan
-                        dengan <strong>kultum
-                            (kuliah tujuh menit)</strong> secara bergiliran antar siswa. Ini bertujuan untuk melatih
-                        <strong>keberanian, rasa
-                            percaya diri, dan kemampuan public speaking</strong>.
-
-                        Selain itu, dalam kegiatan <strong>kajian rutin</strong> maupun saat <strong>tamasya dan outing
-                            class</strong>, siswa juga
-                        dilibatkan secara aktif. Hal ini untuk menanamkan nilai-nilai <strong>akhlak, kebersamaan, dan
-                            kepedulian sosial</strong> dalam berbagai situasi dan tempat.
-
-                        <strong>Seluruh program ini merupakan bagian dari upaya kami membentuk siswa yang berkarakter
-                            Islami,
-                            disiplin, dan siap menghadapi tantangan dunia kerja maupun kehidupan bermasyarakat.</strong>
-                    </div>
-
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq5">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse5">
-                        Apakah ada biaya SPP bulanan?
-                    </button>
-                </h2>
-                <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Ya, <strong>SMK Muhammadiyah 3 Pucang Gading (Mutipuga)</strong> memiliki biaya <strong>SPP
-                            bulanan sebesar Rp100.000</strong> dan
-                        <strong>uang praktikum sebesar Rp65.000 per bulan</strong>.
-
-                        Namun <strong>khusus untuk siswa baru kelas 10</strong>, kami memberikan <strong>program spesial
-                            bebas SPP selama 1 tahun penuh</strong>,
-                        sehingga siswa <strong>hanya perlu membayar uang praktikum sebesar Rp65.000 per bulan</strong>.
-
-                        <strong>Program ini merupakan bentuk komitmen kami untuk meringankan biaya pendidikan orang
-                            tua</strong>,
-                        sekaligus memberi kesempatan lebih luas bagi calon siswa yang ingin menempuh <strong>pendidikan
-                            berkualitas di SMK Mutipuga</strong>.
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="footer">
-        &copy; 2025 SMK Muhammadiyah 3 Pucang Gading. All Rights Reserved.
-    </footer>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
-
-</html>
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+}
