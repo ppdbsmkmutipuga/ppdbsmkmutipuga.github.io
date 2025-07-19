@@ -72,10 +72,10 @@ ul {
     font-size: 2rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(to right, #ffffff, #6600ff);
+    background: linear-gradient(to right, #ff0000, #6600ff);
     padding: 20px 30px;
     border-radius: 20px;
-    text-shadow: 2px 2px 0 rgb(255, 255, 255);
+    text-shadow: 2px 2px 0 rgb(255, 0, 0);
     display: inline-block;
 }
 
