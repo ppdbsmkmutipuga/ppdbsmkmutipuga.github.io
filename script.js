@@ -105,9 +105,9 @@ window.addEventListener('DOMContentLoaded', () => {
         const g1Start = new Date(2025, 10, 1);   // 1 Nov 2025
         const g1End   = new Date(2025, 11, 31);  // 31 Des 2025
         const g2Start = new Date(2026, 0, 1);    // 1 Jan 2026
-        const g2End   = new Date(2026, 0, 31);   // 31 Jan 2026
-        const g3Start = new Date(2026, 1, 1);    // 1 Feb 2026
-        const g3End   = new Date(2026, 1, 24);   // 24 Feb 2026
+        const g2End   = new Date(2026, 3, 30);   // 30 April 2026
+        const g3Start = new Date(2026, 4, 1);    // 1 Mei 2026
+        const g3End   = new Date(2026, 6, 24);   // 12 Juli 2026
 
         let message = "";
         let alertClass = "";
