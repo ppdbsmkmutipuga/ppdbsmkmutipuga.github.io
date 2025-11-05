@@ -116,10 +116,10 @@ window.addEventListener('DOMContentLoaded', () => {
             message = "🟢 Gelombang Indent (1 Nov – 31 Des 2025): Gratis Uang Gedung + Merchandise Eksklusif!";
             alertClass = "alert-success";
         } else if (now >= g2Start && now <= g2End) {
-            message = "🟡 Gelombang 2 (1–31 Jan 2026): Potongan Uang Gedung 50%!";
+            message = "🟡 Gelombang 1 (1 Januari–30 April 2026): Potongan Uang Gedung 50%!";
             alertClass = "alert-warning text-dark";
         } else if (now >= g3Start && now <= g3End) {
-            message = "🔴 Gelombang 3 (1–24 Feb 2026): Tanpa Potongan (biaya normal)";
+            message = "🔴 Gelombang 2 (1 Mei–12 Juli 2026): Tanpa Potongan (biaya normal)";
             alertClass = "alert-danger";
         } else if (now < g1Start) {
             message = "📅 Pendaftaran dibuka 1 November 2025 (Gelombang Indent)";
