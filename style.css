@@ -155,28 +155,6 @@ ul {
     padding: 1rem 1.25rem;
     color: #333;
 }
-
-
-
-/* ✨ Animasi untuk info gelombang */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.pulse-once {
-    animation: pulseOnce 1.2s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulseOnce {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
 /* ====== TOMBOL ====== */
 .btn-ppdb,
 .btn-daftar,
@@ -321,6 +299,39 @@ ul {
     font-style: italic;
     color: #fefefe;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+#countdown-timer .count-box {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  min-width: 90px;
+}
+
+#countdown-timer .count-box small {
+  display: block;
+  color: #666;
+  font-weight: 500;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+}
+/* Animasi info gelombang */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.pulse-once {
+  animation: pulseOnce 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseOnce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 /* ====== FOOTER ====== */
