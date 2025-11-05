@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Countdown Timer
-    const targetDate = new Date(2025, 9, 12, 12, 0, 0).getTime(); // 12 Juli 2025
+    const targetDate = new Date(2026, 2, 24, 12, 0, 0).getTime(); // 12 Juli 2025
 
     function updateCountdown() {
         const now = new Date().getTime();
