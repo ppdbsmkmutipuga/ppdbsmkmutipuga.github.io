@@ -156,6 +156,27 @@ ul {
     color: #333;
 }
 
+
+
+/* ✨ Animasi untuk info gelombang */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.pulse-once {
+    animation: pulseOnce 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseOnce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
 /* ====== TOMBOL ====== */
 .btn-ppdb,
 .btn-daftar,
