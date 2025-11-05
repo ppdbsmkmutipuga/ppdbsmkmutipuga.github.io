@@ -80,37 +80,57 @@
         </div>
     </header>
 
-    <!-- Countdown Timer -->
-
-    <div class="container">
-        <div class="countdown-timer mt-3" data-aos="zoom-in-up" data-aos-delay="900">
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <div class="time-box text-center">
-                    <span id="cd-day" class="time-value fs-3 fw-bold">00</span>
-                    <div class="time-label text-secondary">Hari</div>
-                </div>
-                <div class="time-box text-center">
-                    <span id="cd-hour" class="time-value fs-3 fw-bold">00</span>
-                    <div class="time-label text-secondary">Jam</div>
-                </div>
-                <div class="time-box text-center">
-                    <span id="cd-minute" class="time-value fs-3 fw-bold">00</span>
-                    <div class="time-label text-secondary">Menit</div>
-                </div>
-                <div class="time-box text-center">
-                    <span id="cd-second" class="time-value fs-3 fw-bold">00</span>
-                    <div class="time-label text-secondary">Detik</div>
-                </div>
-            </div>
-
-            <!-- Info Pendaftaran -->
-            <div class="text-center mt-3">
-                <p class="countdown-info text-danger fw-semibold">
-                    ⏳ Pendaftaran ditutup <strong>24 Februari 2026</strong> pukul <strong>12.00 WIB</strong>
-                </p>
-            </div>
-        </div>
+   <!-- ====== SECTION COUNTDOWN PPDB ====== -->
+<section id="countdown" class="py-5 bg-light text-center">
+  <div class="container">
+    
+    <!-- 🟢 Info Gelombang di Atas Countdown -->
+    <div id="gelombang-info" class="mb-4">
+      <div class="alert alert-success fw-bold shadow-sm d-inline-block px-4 py-2" role="alert">
+        🟢 Gelombang Indent (1 Nov – 31 Des 2025): Gratis Uang Gedung + Merchandise Eksklusif!
+      </div>
     </div>
+
+    <!-- Judul Countdown -->
+    <h2 class="fw-bold mb-3 text-primary">Batas Akhir Pendaftaran</h2>
+    <p class="mb-4 text-secondary">Segera daftar sebelum waktu berakhir!</p>
+
+    <!-- Countdown Timer -->
+    <div id="countdown-timer" class="d-flex justify-content-center gap-3">
+      <div class="count-box">
+        <h3 id="cd-day" class="fw-bold display-5 mb-0">00</h3>
+        <small>Hari</small>
+      </div>
+      <div class="count-box">
+        <h3 id="cd-hour" class="fw-bold display-5 mb-0">00</h3>
+        <small>Jam</small>
+      </div>
+      <div class="count-box">
+        <h3 id="cd-minute" class="fw-bold display-5 mb-0">00</h3>
+        <small>Menit</small>
+      </div>
+      <div class="count-box">
+        <h3 id="cd-second" class="fw-bold display-5 mb-0">00</h3>
+        <small>Detik</small>
+      </div>
+    </div>
+
+    <!-- Tombol Daftar -->
+    <div class="mt-4">
+      <a href="#pendaftaran" class="btn btn-primary btn-lg rounded-pill shadow">
+        Daftar Sekarang
+      </a>
+    </div>
+
+    <!-- 🟢 Info Gelombang di Bawah Countdown -->
+    <div id="gelombang-info-bottom" class="mt-5">
+      <div class="alert alert-success fw-bold shadow-sm d-inline-block px-4 py-2" role="alert">
+        🟢 Gelombang Indent (1 Nov – 31 Des 2025): Gratis Uang Gedung + Merchandise Eksklusif!
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
     <section class="container py-5">
