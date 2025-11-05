@@ -57,8 +57,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Countdown Timer
-    const targetDate = new Date(2025, 11, 31, 23, 59, 59).getTime(); // 31 Desember 2025
+    // Countdown Timer (batas 31 Desember 2025)
+    const targetDate = new Date(2025, 11, 31, 23, 59, 59).getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -92,4 +92,60 @@ window.addEventListener('DOMContentLoaded', () => {
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // === Info Gelombang Otomatis dengan Animasi ===
+    function updateGelombangInfo() {
+        const infoTop = document.getElementById("gelombang-info");
+        const infoBottom = document.getElementById("gelombang-info-bottom");
+        if (!infoTop && !infoBottom) return;
+
+        const now = new Date();
+
+        // Rentang tanggal tiap gelombang
+        const g1Start = new Date(2025, 10, 1);   // 1 Nov 2025
+        const g1End   = new Date(2025, 11, 31);  // 31 Des 2025
+        const g2Start = new Date(2026, 0, 1);    // 1 Jan 2026
+        const g2End   = new Date(2026, 0, 31);   // 31 Jan 2026
+        const g3Start = new Date(2026, 1, 1);    // 1 Feb 2026
+        const g3End   = new Date(2026, 1, 24);   // 24 Feb 2026
+
+        let message = "";
+        let alertClass = "";
+
+        if (now >= g1Start && now <= g1End) {
+            message = "🟢 Gelombang Indent (1 Nov – 31 Des 2025): Gratis Uang Gedung + Merchandise Eksklusif!";
+            alertClass = "alert-success";
+        } else if (now >= g2Start && now <= g2End) {
+            message = "🟡 Gelombang 2 (1–31 Jan 2026): Potongan Uang Gedung 50%!";
+            alertClass = "alert-warning text-dark";
+        } else if (now >= g3Start && now <= g3End) {
+            message = "🔴 Gelombang 3 (1–24 Feb 2026): Tanpa Potongan (biaya normal)";
+            alertClass = "alert-danger";
+        } else if (now < g1Start) {
+            message = "📅 Pendaftaran dibuka 1 November 2025 (Gelombang Indent)";
+            alertClass = "alert-info";
+        } else if (now > g3End) {
+            message = "⛔ Pendaftaran PPDB 2026/2027 telah ditutup.";
+            alertClass = "alert-secondary";
+        }
+
+        const alertHTML = `
+            <div class="alert ${alertClass} fw-bold shadow-sm d-inline-block px-4 py-2 fade-in" role="alert">
+                ${message}
+            </div>
+        `;
+
+        if (infoTop) infoTop.innerHTML = alertHTML;
+        if (infoBottom) infoBottom.innerHTML = alertHTML;
+
+        // Tambahkan animasi "pulse" setelah fade-in
+        const alerts = document.querySelectorAll(".fade-in");
+        alerts.forEach(el => {
+            el.classList.add("pulse-once");
+            setTimeout(() => el.classList.remove("pulse-once"), 1200);
+        });
+    }
+
+    updateGelombangInfo();
+    setInterval(updateGelombangInfo, 60 * 60 * 1000); // update tiap jam
 });
